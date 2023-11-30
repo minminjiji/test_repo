@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>여행지</title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+            header {
+
+                padding: 20px;
+                text-align: center;
+            }
+            #menubar ul {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                
+            }
+            #menubar ul li {
+                list-style-type: none;
+                padding: 0px 15px;
+                display: inline-block;
+            }
+            #menubar ul li a {
+                text-decoration: none;
+                font-size: 24px;
+                color: black;
+            }
+            /* 이미지 슬라이드 스타일 */
+            * {margin:0;padding:0;box-sizing:border-box;}
+            ul, li {list-style:none;}
+
+            .slidebox {max-width:500px;margin:0 auto;}
+            .slidebox .slidelist {white-space:nowrap;font-size:0;overflow:hidden;}
+            .slidebox .slidelist .slideitem {position:relative;display:inline-block;vertical-align:middle;width:100%;transition:all 1s;}
+            .slidebox .slidelist .slideitem > a {display:block;width:auto;position:relative;}
+            .slidebox .slidelist .slideitem > a img {max-width:100%;}
+            .slidebox .slidelist .slideitem > a label {position:absolute;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
+            .slidebox .slidelist .slideitem > a label.prev {left:20px;background:#333 url('left-arrow.png') center center / 50% no-repeat;}
+            .slidebox .slidelist .slideitem > a label.next {right:20px;background:#333 url('right-arrow.png') center center / 50% no-repeat;}
+            
+            
+            [name="slide"] {display:none;}
+            #slide01:checked ~ .slidelist .slideitem {transform:translateX(0);animation:slide01 15s infinite;}
+            #slide02:checked ~ .slidelist .slideitem {transform:translateX(-100%);animation:slide02 15s infinite;}
+            #slide03:checked ~ .slidelist .slideitem {transform:translateX(-200%);animation:slide03 15s infinite;}
+            
+            
+            @keyframes slide01 {
+                0% {left:0%;}
+                33% {left:0%;}
+                34% {left:-100%}
+                66% {left:-100%;}
+                67% {left:-200%;}
+                99% {left:-200%;}
+                100% {left:0%;}
+            }
+            
+            @keyframes slide02 {
+                0% {left:0%;}
+                33% {left:0%;}
+                34% {left:-100%;}
+                66% {left:-100%;}
+                67% {left:100%;}
+                99% {left:100%;}
+                100% {left:0%;}
+            }
+            
+            @keyframes slide03 {
+                0% {left:0%;}
+                33% {left:0%;}
+                34% {left:200%;}
+                66% {left:200%;}
+                67% {left:100%;}
+                99% {left:100%;}
+                100% {left:0%;}
+            }
+            /* 이미지 슬라이드 Style */
+
+            .description-box {
+                width: 50%; 
+                border: 1px solid black;
+                font-size: 24px;
+                text-align: center; 
+                margin:0 auto; 
+            }
+            .text-box {
+                width: 50;
+                border: 1px solid black;
+                font-size: 24px;
+                text-align: center;
+                margin-right: 450px;
+            }
+
+            #center {
+               
+                text-align: center;
+                font-size: 24px;
+                margin-top: 50px;
+            }
+        .root_daum_roughmap {
+                margin: auto !important;
+        }
+        #img1 {
+            font-size: 24px;
+            text-align: center;
+        }
+        
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>부산 광안리 - 부산 불꽃축제</h1>
+        </header>
+        <nav id="menubar">
+            <ul>
+                <li><a href="search.html">검색</a></li>
+                <li><a href="list.html">리스트</a></li>
+                <li><a href="http://203.234.62.112:9090/">게시판</a></li>
+            </ul>
+        </nav>
+        <hr>
+        <div style="text-align: center;">
+        <img src="http://www.bfo.or.kr/SE/upload/%EB%AC%B4%EB%B9%99%ED%8F%AC%EC%8A%A4%ED%84%B0.gif" alt="" width="1000" height="500">
+        </div>
+        <p id="img1">-부산 광안리의 불꽃축제-</p>
+
+        <div class="description-box" style="margin-top: 30px;">
+            <p>부산 광안리 해수욕장은 우리나라의 대표 해수욕장입니다.<br>
+                매년 여름마다 인기있는 휴양지로 선정되는 명소이고,<br>
+                주변에 호텔부터 게스트 하우스까지 다양한 숙소, <br>부산의 맛집들이 많이 있어 
+                사람들이 많이 찾는 여행지입니다.</p>
+        </div>
+        <hr id="center">
+        <div style="text-align: center; font-size: 24px; margin-top: 30px;">
+            <p>-부산 광안리의 볼거리-</p>
+        </div>
+        <div >
+        <div class="slidebox" style="margin-left: 450px; margin-top: 10px; ">
+            <input type="radio" name="slide" id="slide01" checked>
+            <input type="radio" name="slide" id="slide02">
+            <input type="radio" name="slide" id="slide03">
+            <ul class="slidelist">
+                <li class="slideitem">
+                    <a>
+                        <label for="slide03" class="prev"></label>
+                        <img src="http://www.bfo.or.kr/SE/upload/%EB%AC%B4%EB%B9%99%ED%8F%AC%EC%8A%A4%ED%84%B0.gif"
+                        width="500" height="500">
+                        <label for="slide02" class="next"></label>
+                    </a>
+                </li>
+                <li class="slideitem">
+                    <a>
+                        <label for="slide01" class="prev"></label>
+                        <img src="" width="500" height="500">
+                        <label for="slide03" class="next"></label>
+                    </a>
+                </li>
+                <li class="slideitem">
+                    <a>
+                        <label for="slide02" class="prev"></label>
+                        <img src="" width="500" height="500">
+                        <label for="slide01" class="next"></label>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="text-box">
+            <p>
+                부산 광안리의 가장 큰 특징은 광안대교이다.<br>
+                밤의 광안리는 광안대교의 LED와 바다의 조합이 정말 예쁘다.
+            </p>
+        </div>
+    </div>
+
+        <p id="center">-주변 위치 정보-</p>
+<!-- * 카카오맵 - 지도퍼가기 -->
+<!-- 1. 지도 노드 -->
+<div id="daumRoughmapContainer1701266572446" class="root_daum_roughmap root_daum_roughmap_landing" id="root_daum_roughmap"></div>
+
+<!--
+	2. 설치 스크립트
+	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+-->
+<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+<!-- 3. 실행 스크립트 -->
+<script charset="UTF-8">
+	new daum.roughmap.Lander({
+		"timestamp" : "1701266572446",
+		"key" : "2hzte",
+		"mapWidth" : "640",
+		"mapHeight" : "360"
+	}).render();
+</script>
+     
+    
+
+</body></html>
